@@ -1,28 +1,26 @@
 <script>
-    export let title;
-    let exercise = {
-        activity: "",
-        sets: 4,
-        reps: 10
-    }
+  export let title;
+  let exercise = {
+    activity: "",
+    sets: 4,
+    reps: 10
+  };
 
-    let exercises = [];
+  let exercises = [];
 
-    const handleSubmit = () => {
-        exercises = [...exercises, { ...exercise }];
-        console.log(exercises);
-        
-    }
-
+  const handleSubmit = () => {
+    exercises = [...exercises, { ...exercise }];
+    console.log(exercises);
+  };
 </script>
 
 <style>
-    
+
 </style>
 
 <div>
-    <h2>{ title }</h2>
-     <div>
+  <h2>{title}</h2>
+  <div>
     <form on:submit|preventDefault={handleSubmit}>
       <div>
         <label for="activity">Activity</label>
@@ -38,5 +36,12 @@
       </div>
       <button type="submit">add exercise</button>
     </form>
+  </div>
+  <div>
+    <ul>
+      {#each exercises as ex}
+        <li>{ex.activity}: {ex.sets} sets of {ex.reps} reps</li>
+      {/each}
+    </ul>
   </div>
 </div>
