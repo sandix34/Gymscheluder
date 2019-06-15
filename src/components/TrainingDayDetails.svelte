@@ -16,7 +16,9 @@
 
 </script>
 
-<style></style>
+<style>
+    
+</style>
 
 <div>
     <h2>{ title }</h2>

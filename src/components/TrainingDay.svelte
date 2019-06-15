@@ -15,7 +15,15 @@
 </script>
 
 <style>
+  .all-days {
+        border: 2px solid purple;
+        margin: 5px;
+    }
 
+    .training-day-details {
+        border: 2px solid green;
+        margin: 5px;
+    }
 </style>
 
 <div>
@@ -30,9 +38,9 @@
 </div>
 
 {#if ndDaysTrainingPerWeek}
-<div>
+<div class="all-days ">
   {#each ndDaysTrainingPerWeek.value as dayNumber, i}
-    <div>
+    <div class="training-day-details">
       <TrainingDayDetails title={ `day ${++i}` } />
     </div>
   { /each }
