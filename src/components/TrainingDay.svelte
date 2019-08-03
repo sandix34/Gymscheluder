@@ -59,6 +59,8 @@
     </div>
   { /each }
 </div>
+{#if isSummaryReady}
 <TrainingWeekSummary summary={summary} days={ndDaysTrainingPerWeek.value.length}/>
+{/if}
 <button on:click={generateSummary}>Generate summary</button>
 {/if}
