@@ -12,11 +12,18 @@
     { id: 7, text: "Seven day", value: [1, 2, 3, 4, 5, 6, 7] }
   ];
 
+  let summary = [];
+  let isSummaryReady = false;
   let ndDaysTrainingPerWeek;
 
   const handleNewExercise = (event) => {
     console.log("on:add-exercise", event.detail);
+    summary = [ ...summary, event.detail];
     
+  }
+
+  const generateSummary = () => {
+    isSummaryReady = true;
   }
   
 </script>
@@ -52,5 +59,6 @@
     </div>
   { /each }
 </div>
-<TrainingWeekSummary/>
+<TrainingWeekSummary summary={summary} days={ndDaysTrainingPerWeek.value.length}/>
+<button on:click={generateSummary}>Generate summary</button>
 {/if}
